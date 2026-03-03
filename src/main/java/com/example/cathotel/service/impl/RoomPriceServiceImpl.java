@@ -1,0 +1,48 @@
+package com.example.cathotel.service.impl;
+
+import com.example.cathotel.entity.RoomCost;
+import com.example.cathotel.repository.RoomCostRepository;
+import com.example.cathotel.repository.RoomRateRepository;
+import com.example.cathotel.service.RoomPriceService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class RoomPriceServiceImpl implements RoomPriceService {
+
+    @Autowired
+    private RoomRateRepository roomRateRepository;
+
+    @Autowired
+    private RoomCostRepository roomCostRepository;
+
+    // --- 新增 (Create) ---
+    @Override
+    public List<RoomCost> createRoomCost(List<RoomCost> roomCost) {
+        // save 方法會回傳儲存後的物件（包含生成的 ID）
+        return roomCostRepository.saveAll(roomCost);
+    }
+
+    // 查詢全部
+    @Override
+    public List<RoomCost> getAllRoomCosts() {
+        return roomCostRepository.findAll();
+    }
+
+    // 根據 ID 查詢特定資料
+    @Override
+    public Optional<RoomCost> getRoomCostById(String id) {
+        return roomCostRepository.findById(id);
+    }
+
+    @Override
+    public List<RoomCost> deleteRoomCost(String id) {
+        roomCostRepository.deleteById(id);
+        return roomCostRepository.findAll();
+    }
+
+
+}

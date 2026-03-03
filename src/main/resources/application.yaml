@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: cat-hotel
+
+  data:
+    mongodb:
+      uri: mongodb+srv://soulms55_db_user:cathoteltest@mycathotel.cqqia6d.mongodb.net/MyCatHotel?retryWrites=true&w=majority
