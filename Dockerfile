@@ -11,5 +11,5 @@ FROM eclipse-temurin:17-jre
 WORKDIR /app
 # 根據專案 pom.xml，編譯出的 jar 會在 target 資料夾下
 EXPOSE 8080
-COPY --from=build /home/app/target/*.jar /usr/local/lib/app.jar
-ENTRYPOINT ["java","-jar","/usr/local/lib/app.jar"]
+COPY --from=build /app/cat-hotel/target/*.jar app.jar
+ENTRYPOINT ["java","-jar","app.jar"]
