@@ -10,6 +10,6 @@ RUN mvn clean package -DskipTests
 FROM eclipse-temurin:17-jre
 WORKDIR /app
 # 根據專案 pom.xml，編譯出的 jar 會在 target 資料夾下
-COPY --from=build /app/target/my-cat-hotel-*.jar app.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "app.jar"]
+COPY --from=build /home/app/target/*.jar /usr/local/lib/app.jar
+ENTRYPOINT ["java","-jar","/usr/local/lib/app.jar"]
