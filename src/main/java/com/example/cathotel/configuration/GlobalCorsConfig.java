@@ -16,7 +16,7 @@ public class GlobalCorsConfig {
                 //映射路徑
                 registry.addMapping("/**")
                         //允許使用那些請求方式
-                        .allowedMethods("GET", "POST", "PUT", "DELETE")
+                        .allowedMethods("GET", "POST", "PUT", "DELETE", "PATCH")
                         //允許哪些Header
                         .allowedHeaders("*")
                         //允許跨網域請求的來源
