@@ -18,6 +18,9 @@ public class RoomDiscountsList {
     @Field("threeNight")
     private Integer threeNight;
 
+    @Field("oneAndTwoNight")
+    private Integer oneAndTwoNight;
+
     @Field("sevenNight")
     private Integer sevenNight;
 
@@ -103,5 +106,13 @@ public class RoomDiscountsList {
 
     public void setExtraCatFee(Integer extraCatFee) {
         this.extraCatFee = extraCatFee;
+    }
+
+    public Integer getOneAndTwoNight() {
+        return oneAndTwoNight;
+    }
+
+    public void setOneAndTwoNight(Integer oneAndTwoNight) {
+        this.oneAndTwoNight = oneAndTwoNight;
     }
 }
